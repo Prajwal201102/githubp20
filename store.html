@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            text-align: center;
+        }
+        table{
+            text-align: center;
+            padding:5px;
+            margin: auto;
+        
+        }
+        
+        
+        #btn{
+            padding: 5px 100px 2px 100px;
+            border:solid black 2px;
+            background-color: aqua;
+        }
+        #slct{
+            padding:1px 50px 1px 50px ;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>STUDENT FORM</h1>
+    <table border="1">
+        <tr>
+            <th>
+                Name
+            </th>
+            <td><input type="text" id="name" placeholder="Enter your name"></td>
+        </tr>
+        <tr>
+            <th>
+                Age
+            </th>
+            <td><input type="text" id="age"   placeholder="Enter your age"></td>
+        </tr>
+        <tr>
+            <th>
+                Gender
+            </th>
+            <td id="gen"><input type="radio" value="Male">Male 
+                <input type="radio" value="Female">Female</td>
+        </tr>
+        <tr>
+            <th>
+                Course
+            </th>
+            <td>
+                <select id="slct">
+                    <option></option>
+                <option id="js">Javascript</option>
+                <option id="j">Java</option>
+                <option id="p">Python</option>
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <th>
+            E-mail
+            </th>
+            <td><input type="mail" id="email"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="button" onclick="save()"  value="Save" id="btn"></td>
+        </tr>
+
+    </table>
+
+    <br>
+    <table border="1" id="tb1">
+        <th>Name</th>
+        <th>Age</th>
+        <th>Course</th>
+        <th>Gender</th>
+        <th>EMail</th>
+        <th>Action</th>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        function save(){
+        var name=document.getElementById("name").value;
+        var age=document.getElementById("age").value;
+        var course=document.getElementById("slct").value;
+        var gender=document.getElementById("gen").value;
+        var mail=document.getElementById("email").value;
+        
+        var tr=document.createElement("tr");
+
+        var td1=tr.appendChild(document.createElement("td"));
+        var td2=tr.appendChild(document.createElement("td"));
+        var td3=tr.appendChild(document.createElement("td"));
+        var td4=tr.appendChild(document.createElement("td"));
+        var td5=tr.appendChild(document.createElement("td"));
+        var td6=tr.appendChild(document.createElement("td"));
+        var bttn=td6.appendChild(document.createElement("button"))
+        
+        td1.innerHTML=name;
+        td2.innerHTML=age;
+        td3.innerHTML=course;
+        td4.innerHTML=gender;
+        td5.innerHTML=mail;
+        
+
+        document.getElementById("tb1").appendChild(tr);  
+    }
+    </script>
+
+</body>
+</html>
